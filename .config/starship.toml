@@ -1,0 +1,31 @@
+# Use custom format
+# format = """
+# [┌───────────────────>](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) """
+
+# Disable the newline at the start of the prompt
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+# [character]                         # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[❯](bold green) "
+error_symbol = "[✗](bold red) "
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 20%
+threshold = 20
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 20% and 40%
+threshold = 40
+style = "bold yellow"
