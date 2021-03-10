@@ -22,10 +22,15 @@ disabled = true
 success_symbol = "[❯](bold green) "
 error_symbol = "[✗](bold red) "
 
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
 [[battery.display]]  # "bold red" style when capacity is between 0% and 20%
 threshold = 20
 style = "bold red"
 
 [[battery.display]]  # "bold yellow" style when capacity is between 20% and 40%
-threshold = 40
+threshold = 80
 style = "bold yellow"

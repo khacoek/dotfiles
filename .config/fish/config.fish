@@ -27,11 +27,11 @@ set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mod
 ### END OF VI MODE ###
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
-set fish_color_normal brcyan
-set fish_color_autosuggestion '#7d7d7d'
-set fish_color_command brcyan
-set fish_color_error '#ff6c6b'
-set fish_color_param brcyan
+#set fish_color_normal brcyan
+#set fish_color_autosuggestion '#7d7d7d'
+#et fish_color_command brcyan
+#set fish_color_error '#ff6c6b'
+#et fish_color_param brcyan
 
 ### SPARK ###
 set -g spark_version 1.0.0
