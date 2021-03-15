@@ -173,9 +173,10 @@ layout_theme = {"border_width": 2,
 
 layouts = [
     layout.MonadTall(**layout_theme),
+    layout.Max(**layout_theme),
     layout.RatioTile(**layout_theme),
-    #layout.Floating(**layout_theme),
-    #layout.Max(**layout_theme),
+    layout.Tile(shift_windows=True, **layout_theme),
+    layout.Floating(**layout_theme),
     #layout.MonadWide(**layout_theme),
     #layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
@@ -183,7 +184,6 @@ layouts = [
     #layout.VerticalTile(**layout_theme),
     #layout.Matrix(**layout_theme),
     #layout.Zoomy(**layout_theme),
-    #layout.Tile(shift_windows=True, **layout_theme),
     #layout.TreeTab(
     #     font = "Ubuntu",
     #     fontsize = 10,
