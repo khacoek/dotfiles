@@ -3,15 +3,16 @@ import os
 import re
 import socket
 import subprocess
-from libqtile.config import KeyChord, Key, Screen, Group, Drag, Click
+from libqtile import qtile
+from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 from libqtile.lazy import lazy
 from typing import List  # noqa: F401
 
+
 mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
 myTerm = "alacritty"                             # My terminal of choice
-myConfig = "/home/dk/.config/qtile/config.py"    # The Qtile config file location
 
 keys = [
          ### The essentials
@@ -296,13 +297,11 @@ def init_widgets_list():
                        fontsize = 15
                        ),          
               widget.CheckUpdates(
-                       colour_have_updates = colors[9],
-                       colour_no_updates = colors[9],
-                       display_format = '{updates}',                 
-                       no_update_string = '0',
+                       distro = "Arch_yay",
+                       display_format = "{updates} Updates",
                        foreground = colors[9],
                        background = colors[0],
-                       update_interval = 3600,
+                       update_interval = 1800,
                        padding = 5
                        ),                  
               widget.TextBox(
@@ -395,7 +394,7 @@ def init_widgets_list():
                        foreground = colors[8],
                        background = colors[0],
                        padding = 5,
-                       format = "%a, %b %d - %H:%M %P"
+                       format = "%A, %B %d - %H:%M %P"
                        ),
               widget.TextBox(
                        text = '|',
@@ -474,20 +473,14 @@ bring_front_click = False
 cursor_warp = False
 
 floating_layout = layout.Floating(float_rules=[
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    # Run the utility of `xprop` to see the wm class and name of an X client.
+    # default_float_rules include: utility, notification, toolbar, splash, dialog,
+    # file_progress, confirm, download and error.
+    *layout.Floating.default_float_rules,
+    Match(title='Confirmation'),  # tastyworks exit box
+    Match(title='Qalculate!'),  # qalculate-gtk
+    Match(wm_class='kdenlive'),  # kdenlive
+    Match(wm_class='pinentry-gtk-2'),  # GPG key password entry
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
