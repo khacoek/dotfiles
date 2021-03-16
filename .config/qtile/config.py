@@ -175,8 +175,8 @@ layouts = [
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.RatioTile(**layout_theme),
-    layout.Tile(shift_windows=True, **layout_theme),
-    layout.Floating(**layout_theme),
+    #layout.Tile(shift_windows=True, **layout_theme),
+    #layout.Floating(**layout_theme),
     #layout.MonadWide(**layout_theme),
     #layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
@@ -231,7 +231,7 @@ def init_widgets_list():
                        background = colors[0],
                        foreground = colors[3],
                        padding = 10,
-                       fontsize = 20
+                       fontsize = 15
                        ),                   
               widget.TextBox(
                        text = '|',
@@ -290,7 +290,7 @@ def init_widgets_list():
                        fontsize = 10
                        ),
               widget.TextBox(
-                       text = " ",
+                       text =" ",
                        padding = 2,
                        foreground = colors[9],
                        background = colors[0],
@@ -314,7 +314,8 @@ def init_widgets_list():
                        fontsize = 10
                        ),
               widget.TextBox(
-                       text = "直",
+                       text = "直 ",
+                       padding = 2,
                        foreground = colors[6],
                        background = colors[0],
                        fontsize = 15
@@ -397,7 +398,7 @@ def init_widgets_list():
                        foreground = colors[8],
                        background = colors[0],
                        padding = 5,
-                       format = "%A, %B %d - %H:%M %P"
+                       format = "%A, %b %d - %H:%M %P"
                        ),
               widget.TextBox(
                        text = '|',
@@ -406,7 +407,7 @@ def init_widgets_list():
                        fontsize = 10
                        ),         
               widget.Systray(
-                       icon_size = 20,
+                       icon_size = 15,
                        foreground = colors[3],
                        background = colors[0],
                        padding = 10
@@ -423,9 +424,9 @@ def init_widgets_screen2():
     return widgets_screen2                       # Monitor 2 will display all widgets in widgets_list
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=25)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), opacity=1.0, size=20)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20))]
 
 if __name__ in ["config", "__main__"]:
     screens = init_screens()
