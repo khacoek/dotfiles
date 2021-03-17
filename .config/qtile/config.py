@@ -297,11 +297,11 @@ def init_widgets_list():
                        fontsize = 15
                        ),          
               widget.CheckUpdates(
-                       distro = "Arch_yay",
+                       distro = "Arch_checkupdates",
                        display_format = "{updates} Updates",
-                       no_update_string = "0 Updates",
-                       colour_have_updates = colors[9],
-                       colour_no_updates = colors[9],
+                       #no_update_string = "0 Updates",
+                       #colour_have_updates = colors[9],
+                       #colour_no_updates = colors[9],
                        foreground = colors[9],
                        background = colors[0],
                        update_interval = 1800,
