@@ -157,7 +157,7 @@ group_names = [("WWW", {'layout': 'monadtall'}),
                ("DOC", {'layout': 'monadtall'}),
                ("MUS", {'layout': 'monadtall'}),
                ("VID", {'layout': 'monadtall'}),
-               ("GFX", {'layout': 'monadtall'})]
+               ("GFX", {'layout': 'floating'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
@@ -175,8 +175,8 @@ layouts = [
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.RatioTile(**layout_theme),
+    layout.Floating(**layout_theme),
     #layout.Tile(shift_windows=True, **layout_theme),
-    #layout.Floating(**layout_theme),
     #layout.MonadWide(**layout_theme),
     #layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
