@@ -283,30 +283,30 @@ def init_widgets_list():
                        foreground = colors[3],
                        background = colors[0],
                        ),
-               widget.TextBox(
-                       text = '|',
-                       background = colors[0],
-                       foreground = colors[3],
-                       fontsize = 10
-                       ),
-              widget.TextBox(
-                       text =" ",
-                       padding = 2,
-                       foreground = colors[9],
-                       background = colors[0],
-                       fontsize = 15
-                       ),          
-              widget.CheckUpdates(
-                       distro = "Arch_checkupdates",
-                       display_format = "{updates} Updates",
-                       #no_update_string = "0 Updates",
-                       #colour_have_updates = colors[9],
-                       #colour_no_updates = colors[9],
-                       foreground = colors[9],
-                       background = colors[0],
-                       update_interval = 1800,
-                       padding = 5
-                       ),                  
+        #       widget.TextBox(
+        #               text = '|',
+        #               background = colors[0],
+        #               foreground = colors[3],
+        #               fontsize = 10
+        #               ),
+        #      widget.TextBox(
+        #               text =" ",
+        #               padding = 2,
+        #               foreground = colors[9],
+        #               background = colors[0],
+        #               fontsize = 15
+        #               ),          
+        #      widget.CheckUpdates(
+        #               distro = "Arch_checkupdates",
+        #               display_format = "{updates} Updates",
+        #               no_update_string = "0 Updates",
+        #               colour_have_updates = colors[9],
+        #               colour_no_updates = colors[9],
+        #               foreground = colors[9],
+        #               background = colors[0],
+        #               update_interval = 1800,
+        #               padding = 5
+        #               ),                  
               widget.TextBox(
                        text = '|',
                        background = colors[0],
