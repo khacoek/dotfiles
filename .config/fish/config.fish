@@ -11,10 +11,10 @@ set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mod
 ### Uncomment only one of these!
 
 ### "bat" as manpager
-#set -x MANPAGER "sh -c 'col -bx | bat -l man -p'" 
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'" 
 
 ### "vim" as manpager
-# set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+# set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man t#s=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</de#v/tty <(col -b)"'
 
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"
@@ -196,7 +196,7 @@ end
 
 ### ALIASES ###
 # spark aliases
-alias clear='clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
+#alias clear='clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; ech#o'
 
 # root privileges
 #alias doas="doas --"
@@ -214,11 +214,11 @@ alias .5='cd ../../../../..'
 #alias emacs="emacsclient -c -a 'emacs'"
 #alias doomsync="~/.emacs.d/bin/doom sync"
 #alias doomdoctor="~/.emacs.d/bin/doom doctor"
-alias doomupgrade="~/.emacs.d/bin/doom upgrade"
-alias doompurge="~/.emacs.d/bin/doom purge"
+#alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+#alias doompurge="~/.emacs.d/bin/doom purge"
 
 # bat
-# alias cat='bat'
+alias cat='bat'
 
 # broot
 #alias br='broot -dhp'
@@ -320,7 +320,7 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 #alias tb="nc termbin.com 9999"
 
 # the terminal rickroll
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+#alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/rol#l.sh | bash'
 
 # Unlock LBRY tips
 #alias tips="lbrynet txo spend --type=support --is_not_my_input --blocking"
