@@ -1,9 +1,9 @@
 #! /bin/bash 
 
 lxsession &
-picom --experimental-backends &
+picom &
 nitrogen --restore &
-/usr/bin/emacs --daemon &
+#/usr/bin/emacs --daemon &
 volumeicon &
 nm-applet &
 cbatticon &
