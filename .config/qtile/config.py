@@ -152,10 +152,10 @@ keys = [
              ),    
 ]
 
-group_names = [("WWW", {'layout': 'monadtall'}),
-               ("DEV", {'layout': 'monadtall'}),
-               ("DOC", {'layout': 'monadtall'}),
-               ("MUS", {'layout': 'monadtall'}),
+group_names = [("WWW", {'layout': 'max'}),
+               ("DEV", {'layout': 'ratiotile'}),
+               ("DOC", {'layout': 'max'}),
+               ("MUS", {'layout': 'monadwide'}),
                ("VID", {'layout': 'monadtall'}),
                ("GFX", {'layout': 'floating'})]
 
@@ -175,9 +175,9 @@ layouts = [
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
     layout.RatioTile(**layout_theme),
+    layout.MonadWide(**layout_theme),
     layout.Floating(**layout_theme),
     #layout.Tile(shift_windows=True, **layout_theme),
-    #layout.MonadWide(**layout_theme),
     #layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
     #layout.Columns(**layout_theme),
@@ -374,7 +374,7 @@ def init_widgets_list():
                        foreground = colors[8],
                        background = colors[0],
                        padding = 5,
-                       format = "%A, %b %d - %H:%M %P"
+                       format = "%A, %b %d - %H:%M"
                        ),
               widget.TextBox(
                        text = '|',
