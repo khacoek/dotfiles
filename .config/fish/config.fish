@@ -1,7 +1,12 @@
 # My fish config. Not much to see here; just some pretty standard stuff.
 
-### EXPORT ###
+### ADDING TO THE PATH
+# First line removes the path; second line sets it.  Without the first line,
+# your path gets massive and fish becomes very slow.
+set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $HOME/Applications $fish_user_paths
+
+### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "emacsclient -t -a ''"                 # $EDITOR use Emacs in terminal
@@ -11,27 +16,27 @@ set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mod
 ### Uncomment only one of these!
 
 ### "bat" as manpager
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'" 
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "vim" as manpager
-# set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man t#s=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</de#v/tty <(col -b)"'
+# set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 ### "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
-#function fish_user_key_bindings
-# fish_default_key_bindings
-# fish_vi_key_bindings
-#end
+function fish_user_key_bindings
+  # fish_default_key_bindings
+  fish_vi_key_bindings
+end
 ### END OF VI MODE ###
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
-#set fish_color_normal brcyan
-#set fish_color_autosuggestion '#7d7d7d'
-#et fish_color_command brcyan
-#set fish_color_error '#ff6c6b'
-#et fish_color_param brcyan
+set fish_color_normal brcyan
+set fish_color_autosuggestion '#7d7d7d'
+set fish_color_command brcyan
+set fish_color_error '#ff6c6b'
+set fish_color_param brcyan
 
 ### SPARK ###
 set -g spark_version 1.0.0
@@ -196,26 +201,26 @@ end
 
 ### ALIASES ###
 # spark aliases
-#alias clear='clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; ech#o'
+alias clear='/bin/clear; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
 
 # root privileges
 #alias doas="doas --"
 
 # navigation
-alias ..='cd ..' 
+alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # vim and emacs
-#alias vim='nvim'
-#alias em='/usr/bin/emacs -nw'
-#alias emacs="emacsclient -c -a 'emacs'"
-#alias doomsync="~/.emacs.d/bin/doom sync"
-#alias doomdoctor="~/.emacs.d/bin/doom doctor"
-#alias doomupgrade="~/.emacs.d/bin/doom upgrade"
-#alias doompurge="~/.emacs.d/bin/doom purge"
+alias vim='nvim'
+alias em='/usr/bin/emacs -nw'
+alias emacs="emacsclient -c -a 'emacs'"
+alias doomsync="~/.emacs.d/bin/doom sync"
+alias doomdoctor="~/.emacs.d/bin/doom doctor"
+alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+alias doompurge="~/.emacs.d/bin/doom purge"
 
 # bat
 alias cat='bat'
@@ -259,8 +264,10 @@ alias rm='rm -i'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-#alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-#alias vifm='./.config/vifm/scripts/vifmrun'
+alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
+alias vifm='./.config/vifm/scripts/vifmrun'
+alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
+alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
 
 ## get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4'
@@ -310,7 +317,7 @@ alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 # switch between shells
 # I do not recommend switching default SHELL from bash.
 #alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-#alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+#lias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 #alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 # bare git repo alias for dotfiles
@@ -320,7 +327,7 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 #alias tb="nc termbin.com 9999"
 
 # the terminal rickroll
-#alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/rol#l.sh | bash'
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
 # Unlock LBRY tips
 #alias tips="lbrynet txo spend --type=support --is_not_my_input --blocking"
