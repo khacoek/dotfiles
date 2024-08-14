@@ -248,3 +248,5 @@ fi
 
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
+
+### BashEdit ###
